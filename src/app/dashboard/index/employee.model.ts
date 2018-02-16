@@ -1,7 +1,23 @@
-export class Employee{
+export class Employees{
 
-    constructor(private id:any,private todo:string){
-        this.id=id;
-        this.todo=todo;
-    }
+        // constructor(private email:string,
+        //     private password:string,
+        //     private username?:string,
+        //     private employeeType?:string,
+        //     private image?:string
+        // ){
+        //     this.email=email;
+        //     this.password=password;
+        //     this.username=username;
+        //     this.employeeType=employeeType,
+        //     this.image=image
+
+        // }
+
+        constructor(private email:string,private password:string,private username:string,private employeeType:string){
+            this.email=email;
+            this.password=password;
+            this.username=username;
+            this.employeeType=employeeType;
+        }
 }

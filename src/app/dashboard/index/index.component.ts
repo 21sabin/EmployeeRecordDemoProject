@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'app/dashboard/index/employee.service';
-import {Employee} from './employee.model';
+import {Employees} from './employee.model';
 
 
 
@@ -13,15 +13,15 @@ export class IndexComponent implements OnInit {
 
   constructor(private employeeService:EmployeeService) { }
 
-  employees:Employee[];
+  employees:Employees[];
 
   ngOnInit() {
-     this.employeeService.getEmlopyeeList()
-     .subscribe(
-      (employee:Employee[])=>{
-          this.employees=employee
-      }
-     )
+    //  this.employeeService.getEmlopyeeList()
+    //  .subscribe(
+    //   (employee:Employee[])=>{
+    //       this.employees=employee
+    //   }
+    //  )
 
   }
 
