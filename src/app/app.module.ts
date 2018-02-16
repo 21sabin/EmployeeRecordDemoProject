@@ -7,25 +7,45 @@ import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './auth/login-component/login-component.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { IndexComponent } from './dashboard/index/index.component'
-import { routing } from './app.routes';
+import {Routes,RouterModule} from '@angular/router';
+import { HeaderComponent } from './dashboard/header/header.component'
+import {EmployeeService} from './dashboard/index/employee.service';
+import {SignupComponent} from './auth/signup/signup.component';
+import {PageNotFoundComponent} from './pageNotFoundComponent'
 
+
+
+const routes:Routes=[
+ 
+  {path:'',component:LoginComponentComponent},
+  {path:'signup',component:SignupComponent},
+  {path:'index',component:IndexComponent},
+  {path:'login',component:LoginComponentComponent},
+  {path:'**', component:PageNotFoundComponent}
+ 
+ 
+
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponentComponent,
-    IndexComponent
+    IndexComponent,
+    PageNotFoundComponent,
+    HeaderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
-    routing,
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
     HttpModule,
+    RouterModule.forRoot(routes)
     
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

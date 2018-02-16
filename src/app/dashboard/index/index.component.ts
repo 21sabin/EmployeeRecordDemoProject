@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from 'app/dashboard/index/employee.service';
+import {Employee} from './employee.model';
+
+
 
 @Component({
   selector: 'app-index',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private employeeService:EmployeeService) { }
+
+  employees:Employee[];
 
   ngOnInit() {
+     this.employeeService.getEmlopyeeList()
+     .subscribe(
+      (employee:Employee[])=>{
+          this.employees=employee
+      }
+     )
+
   }
 
 }

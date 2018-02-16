@@ -1,0 +1,76 @@
+<div class="container">
+
+  <div class="row signup">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Employee Registration Form</h1>
+      <hr>
+      <form [formGroup]="myForm"  (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input type="text" class="form-control" formControlName="username" id="username" placeholder="username">
+           </div>
+
+           <div *ngIf="myForm.get('username').touched && myForm.get('username').invalid" class="alert alert-danger">
+                <div *ngIf="myForm.get('username').hasError('required')">
+                    Username is Required!
+                </div>
+                <div *ngIf="myForm.get('username').hasError('pattern')">
+                  Username is not valid!
+              </div>
+           </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" placeholder="Email">
+        </div>
+
+        <div *ngIf="myForm.get('email').touched && myForm.get('email').invalid" class="alert alert-danger">
+          <div *ngIf="myForm.get('email').hasError('required')">
+              Email is Required!
+          </div>
+          <div *ngIf="myForm.get('username').hasError('email')">
+            Email is not valid!
+        </div>
+     </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <div *ngIf="myForm.get('password').touched && myForm.get('password').invalid" class="alert alert-danger">
+          <div *ngIf="myForm.get('password').hasError('required')">
+              passwrord is Required!
+          </div>
+        <div *ngIf="myForm.get('password').hasError('minLength')">
+          Weak Password
+      </div>
+     </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Type of Employment:</label>
+           <select name="employmentType" formControlName="employeeType">
+             <option name="">Please select choice</option>
+             <option name="">Intern</option>
+             <option name="">Permanent Employee</option>
+             <option name="">PartTime Employee</option>
+           </select>
+          </div>
+
+
+        <div class="form-group">
+          <label for="exampleInputFile">Your Image</label>
+          <input type="file" id="exampleInputFile" formControlName="image">
+        </div>
+
+       
+
+        <button type="submit"  class="btn btn-primary">Submit</button><br><br>
+        <button type="button" (click)="loginPage()" class="btn btn-sucess btn-sm">Go To Login </button>
+      </form>
+
+    </div>
+  </div>
+
+</div>

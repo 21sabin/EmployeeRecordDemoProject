@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormGroup,FormControl,Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import {Router} from '@angular/router'
+
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponentComponent implements OnInit {
   loginCheck(){
     console.log(this.loginForm.value.email,"email")
       if(this.email===this.loginForm.value.email && this.password===this.loginForm.value.password ){
-          this.router.navigateByUrl('/index');
+        this.router.navigateByUrl('/index')
       }else{
         this.loginErrorMsg="Authentication Failed! Try again";  
         this.loginError=true;    
@@ -29,6 +30,7 @@ export class LoginComponentComponent implements OnInit {
      
   }
 
+  
 
   ngOnInit() {
     this.loginForm=new FormGroup({
