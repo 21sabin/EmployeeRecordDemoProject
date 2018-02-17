@@ -15,15 +15,15 @@ import {PageNotFoundComponent} from './pageNotFoundComponent'
 
 
 
-const routes:Routes=[
- 
-  {path:'',component:LoginComponentComponent},
-  {path:'signup',component:SignupComponent},
-  {path:'index',component:IndexComponent},
-  {path:'login',component:LoginComponentComponent},
-  {path:'**', component:PageNotFoundComponent}
- 
- 
+const routes: Routes = [
+
+  {path: '', component:LoginComponentComponent},
+  {path: 'signup', component:SignupComponent},
+  {path: 'index', component:IndexComponent},
+  {path: 'login', component:LoginComponentComponent},
+  {path: '**', component:PageNotFoundComponent}
+
+
 
 ]
 
@@ -43,7 +43,7 @@ const routes:Routes=[
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes)
-    
+
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

@@ -13,15 +13,17 @@ export class IndexComponent implements OnInit {
 
   constructor(private employeeService:EmployeeService) { }
 
-  employees:Employees[];
+  employees: Employees[];
 
   ngOnInit() {
-    //  this.employeeService.getEmlopyeeList()
-    //  .subscribe(
-    //   (employee:Employee[])=>{
-    //       this.employees=employee
-    //   }
-    //  )
+     this.employeeService.getEmployeeList()
+     .subscribe(
+      (employee:Employees[])=>{
+          this.employees = employee;
+      }
+     )
+
+    // console.log("asdasd4");
 
   }
 
