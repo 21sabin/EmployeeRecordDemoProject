@@ -13,11 +13,6 @@ import {EmployeeService} from './dashboard/index/employee.service';
 import {SignupComponent} from './auth/signup/signup.component';
 import {PageNotFoundComponent} from './pageNotFoundComponent';
 import { EditComponent } from './dashboard/edit/edit.component';
-import { FilterPipe } from './dashboard/index/filter.pipe';
-
-
-
-
 
 const routes:Routes=[
  
@@ -26,8 +21,6 @@ const routes:Routes=[
   {path:'index',component:IndexComponent},
   {path:'login',component:LoginComponentComponent},
   {path:'**', component:PageNotFoundComponent}
- 
- 
 
 ]
 
@@ -39,8 +32,7 @@ const routes:Routes=[
     PageNotFoundComponent,
     HeaderComponent,
     SignupComponent,
-    EditComponent,
-    FilterPipe
+    EditComponent
   ],
   imports: [
     BrowserModule,
