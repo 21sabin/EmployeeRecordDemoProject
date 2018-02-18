@@ -1,5 +1,7 @@
 <app-header></app-header>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 <h1 class="employee">Employee Information</h1>
 <div class="container">
     <div class="row">
@@ -53,3 +55,79 @@
         </div>
     </div>
 </div>
+=======
+=======
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
+<!-- <ul *ngFor="let employee of employees">
+  <li>{{employee.username}}</li>
+</ul> -->
+<!-- <div class="container">
+<div class="list-content mt-3">
+  <div class="card-lg mb-3" *ngFor="let employee of employees, let i = index">
+    <div class="row m-0">
+      <div class="col-sm-3 p-1">
+        <div class="card-thumbnail">
+          <img src="" alt="Profile Pic" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-sm-9 p-0">
+        <div class="card-body p-0">
+          <header class="card-header row clearfix">
+            <div class="col-sm-7">
+              <h5 class="card-title">{{employee.firstName + ' ' + employee.lastName}}</h5>
+              <ul class="fa-ul m-0">
+                <li>Username: {{employee.username}}</li>
+                <li>Position: {{employee.employeeType}}</li>
+                <li>Email: {{employee.email}}</li>
+              </ul>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <div class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keyup)="searchEmployee($event.target.value)">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+    </div>
+  </nav>
+  <table class="table">
+    <thead class="">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Position</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees, let i = index">
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.username}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.position}}</td>
+        <td>
+          <button class="btn btn-md btn-warning">Edit</button>
+          <button class="btn btn-md btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<<<<<<< HEAD
+</div>
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
+=======
+</div>
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
