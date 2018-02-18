@@ -15,12 +15,15 @@ export class Employees{
         // }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         constructor(private email:string,
             private password:string,
             public username:string,
             private employeeType:string,
               public eid?:string){
 =======
+=======
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
         firstName:string;
         lastName:string;
         username:string;
@@ -32,6 +35,9 @@ export class Employees{
         constructor(firstName:string,lastName:string,
                     username:string,email:string,
                     password:string,employeeType:string){
+<<<<<<< HEAD
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
+=======
 >>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
             this.email=email;
             this.password=password;

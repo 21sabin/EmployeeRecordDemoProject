@@ -15,6 +15,7 @@ export class IndexComponent implements OnInit {
 
   employees:Employees[];
 <<<<<<< HEAD
+<<<<<<< HEAD
   deleteMsg:string="";
   deleteStatus:boolean=false;
   filterEmployees:Employees[]=[];
@@ -58,6 +59,8 @@ export class IndexComponent implements OnInit {
      
     )
 =======
+=======
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
   clonedEmployees: Employees[] = [];
   searchedEmployees: Array<any> = [];
 
@@ -90,6 +93,9 @@ export class IndexComponent implements OnInit {
       console.log(searchName);
     }
     this.employees = this.searchedEmployees;
+<<<<<<< HEAD
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
+=======
 >>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
   }
 

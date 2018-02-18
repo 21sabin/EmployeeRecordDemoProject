@@ -15,6 +15,7 @@ import {PageNotFoundComponent} from './pageNotFoundComponent';
 import { EditComponent } from './dashboard/edit/edit.component';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const routes:Routes=[
  
   {path:'',component:LoginComponentComponent},
@@ -23,6 +24,8 @@ const routes:Routes=[
   {path:'login',component:LoginComponentComponent},
   {path:'**', component:PageNotFoundComponent}
 =======
+=======
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
 const routes: Routes = [
 
   {path: '', component:LoginComponentComponent},
@@ -32,6 +35,9 @@ const routes: Routes = [
   {path: '**', component:PageNotFoundComponent}
 
 
+<<<<<<< HEAD
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
+=======
 >>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
 
 ]
