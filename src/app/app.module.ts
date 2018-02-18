@@ -14,6 +14,7 @@ import {SignupComponent} from './auth/signup/signup.component';
 import {PageNotFoundComponent} from './pageNotFoundComponent';
 import { EditComponent } from './dashboard/edit/edit.component';
 
+<<<<<<< HEAD
 const routes:Routes=[
  
   {path:'',component:LoginComponentComponent},
@@ -21,6 +22,17 @@ const routes:Routes=[
   {path:'index',component:IndexComponent},
   {path:'login',component:LoginComponentComponent},
   {path:'**', component:PageNotFoundComponent}
+=======
+const routes: Routes = [
+
+  {path: '', component:LoginComponentComponent},
+  {path: 'signup', component:SignupComponent},
+  {path: 'index', component:IndexComponent},
+  {path: 'login', component:LoginComponentComponent},
+  {path: '**', component:PageNotFoundComponent}
+
+
+>>>>>>> 3a623ed9d625172ddef76395a5d159eae7138d6d
 
 ]
 
@@ -41,7 +53,7 @@ const routes:Routes=[
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes)
-    
+
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

@@ -42,7 +42,7 @@
 
         <div *ngIf="myForm.get('password').touched && myForm.get('password').invalid" class="alert alert-danger">
           <div *ngIf="myForm.get('password').hasError('required')">
-              passwrord is Required!
+              Passwrord is Required!
           </div>
         <div *ngIf="myForm.get('password').hasError('minLength')">
           Weak Password
@@ -57,7 +57,7 @@
              <option name="">Permanent Employee</option>
              <option name="">PartTime Employee</option>
            </select>
-          </div>
+        </div>
 
 
         <!-- <div class="form-group">
@@ -65,7 +65,7 @@
           <input type="file" id="exampleInputFile" formControlName="image">
         </div> -->
 
-       
+
 
         <button type="submit"  class="btn btn-primary">Submit</button><br><br>
         <button type="button" (click)="loginPage()" class="btn btn-sucess btn-sm">Go To Login </button>
