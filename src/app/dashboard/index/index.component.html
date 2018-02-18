@@ -1,5 +1,55 @@
 <app-header></app-header>
-<ul *ngFor="let employee of employees">
-    <li>{{employee.todo}}</li>
 
-</ul>
+<h1 class="employee">Employee Information</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-11 col-sm-offset-1">
+            <p>Total number of Employee {{employeeSize()}}</p>
+            <h2 id="deleteMsg" *ngIf="deleteStatus">{{displayDeleteMsg()}}</h2>
+            <table class="table table-striped">
+                <tr>
+                    <td>
+                         search: <input type="text" name="employee" (keyup)="search($event)">
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td>S.n</td>
+                    <td>Username</td>
+                    <td>Email</td>
+                    <td>EmployeeType</td>
+                    <td>Action</td>
+                </tr>
+
+                <div *ngIf="filterEmployees.length>0;else elseBlock">
+                    <tr *ngFor="let employee of filterEmployees;let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{employee.username | uppercase}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.employeeType}}</td>
+                        <td>
+                            <button type="button" (click)="editEmployee(employee)" class="btn btn-primary btn-sm">Edit</button>
+                            <button type="button" (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm glyphicon glyphicon-trash">Delete</button>
+                         </td>
+                     </tr>
+                </div>
+
+                <ng-template #elseBlock>
+                    <tr *ngFor="let employee of employees;let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{employee.username | uppercase}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.employeeType}}</td>
+                        <td>
+                            <button type="button" (click)="editEmployee(employee)" class="btn btn-primary btn-sm">Edit</button>
+                            <button type="button" (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm glyphicon glyphicon-trash">Delete</button>
+                         </td>
+                     </tr>
+                </ng-template>
+
+               
+              </table>
+            
+        </div>
+    </div>
+</div>

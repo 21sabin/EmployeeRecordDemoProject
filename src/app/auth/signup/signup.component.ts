@@ -15,6 +15,8 @@ export class SignupComponent implements OnInit {
 
   myForm:FormGroup;
   employee:Employees;
+  signupMsg:string="";
+  signupStatus:boolean=false;
 
     loginPage(){
       this.location.back();
@@ -25,51 +27,48 @@ export class SignupComponent implements OnInit {
         this.myForm.value.password,
        this.myForm.value.username,
        this.myForm.value.employeeType);
-    // let employee=new Employees(this.myForm.value.email,
-    //   this.myForm.value.password);
+   
 
       this.employeeService.addEmployee(employees)
       .subscribe(
-        data=>console.log(data)
+        data=>{
+          this.signupMsg="Employee Registrataion sucessfull";
+          this.signupStatus=true;
+        }
       )
 
       // this.employeeService.addEmployee(employee)
       // .subscribe(
       //   data=>console.log(data)
       // )
-    console.log(this.myForm.value);
-      console.log(this.myForm.value.email);
-      console.log(employees);
+      
    }
 
   ngOnInit() {
-    // this.myForm=new FormGroup({
-      
-    //   email:new FormControl(null,[
-    //     Validators.required,
-    //     Validators.email
-    //   ]),
-    //   password:new FormControl(null,[
-    //     Validators.required,
-    //     Validators.minLength(5),
-    //     Validators.pattern(" ^[a-zA-Z]+$")
-    //   ]
-        
-    //   ),
-    //   username:new FormControl(null,[
-    //     Validators.required,
-    //     Validators.pattern("^[a-zA-Z]$")
-    //   ]),
-    //   employeeType:new FormControl(null,Validators.required),
-    //   image:new FormControl(null,Validators.required)
-    // })
     this.myForm=new FormGroup({
-      email:new FormControl(null,Validators.required),
-      password:new FormControl(null,Validators.required),
-      username:new FormControl(null,Validators.required),
-      employeeType:new FormControl(null,Validators.required),
-      image:new FormControl(null,Validators.required)
+      
+      email:new FormControl(null,[
+        Validators.required,
+        Validators.email
+      ]),
+      password:new FormControl(null,[
+        Validators.required,
+        Validators.minLength(5)
+      ]
+        
+      ),
+      username:new FormControl(null,[
+        Validators.required
+      ]),
+      employeeType:new FormControl(null,Validators.required)
     })
+  //   this.myForm=new FormGroup({
+  //     email:new FormControl(null,Validators.required),
+  //     password:new FormControl(null,Validators.required),
+  //     username:new FormControl(null,Validators.required),
+  //     employeeType:new FormControl(null,Validators.required),
+  //     image:new FormControl(null,Validators.required)
+  //   })
   }
 
 }

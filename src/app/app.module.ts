@@ -11,7 +11,11 @@ import {Routes,RouterModule} from '@angular/router';
 import { HeaderComponent } from './dashboard/header/header.component'
 import {EmployeeService} from './dashboard/index/employee.service';
 import {SignupComponent} from './auth/signup/signup.component';
-import {PageNotFoundComponent} from './pageNotFoundComponent'
+import {PageNotFoundComponent} from './pageNotFoundComponent';
+import { EditComponent } from './dashboard/edit/edit.component';
+import { FilterPipe } from './dashboard/index/filter.pipe';
+
+
 
 
 
@@ -34,7 +38,9 @@ const routes:Routes=[
     IndexComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    SignupComponent
+    SignupComponent,
+    EditComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
