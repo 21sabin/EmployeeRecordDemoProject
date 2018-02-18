@@ -46,7 +46,6 @@ export class IndexComponent implements OnInit {
       console.log(searchName);
     }
     this.employees = this.searchedEmployees;
-
   }
 
 }
