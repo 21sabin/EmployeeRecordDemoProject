@@ -17,19 +17,18 @@ export class IndexComponent implements OnInit {
   filterEmployees:Employees[]=[];
   username:string="";
  
- 
   employeeSize(){
     return this.employees.length;
   }
 
   displayDeleteMsg(){
     setTimeout(()=>{
-      document.getElementById('deleteMsg').innerHTML="<h2 style='color:red;'>Employee Recorded Sucessfully</h2>"
+      document.getElementById('deleteMsg').innerHTML="<h2 style='color:red;'>Employee Recorded Sucessfully</h2>";
     },3000)
   }
 
   editEmployee(e:Employees){
-    console.log("edit",e)
+    // console.log("edit",e)
     this.employeeService.editEmployee(e);
   }
 

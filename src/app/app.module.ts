@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponentComponent } from './auth/login-component/login-component.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { LoginComponentComponent, SignupComponent } from './auth/index';
+import { ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './dashboard/index/index.component'
-import {Routes,RouterModule} from '@angular/router';
+import { Routes,RouterModule } from '@angular/router';
 import { HeaderComponent } from './dashboard/header/header.component'
-import {EmployeeService} from './dashboard/index/employee.service';
-import {SignupComponent} from './auth/signup/signup.component';
-import {PageNotFoundComponent} from './pageNotFoundComponent';
+import { EmployeeService } from './dashboard/index/employee.service';
+import { PageNotFoundComponent } from './pageNotFoundComponent';
 import { EditComponent } from './dashboard/edit/edit.component';
+
 
 const routes:Routes=[
  
@@ -20,6 +20,7 @@ const routes:Routes=[
   {path:'signup',component:SignupComponent},
   {path:'index',component:IndexComponent},
   {path:'login',component:LoginComponentComponent},
+  {path:'edit',component:EditComponent},
   {path:'**', component:PageNotFoundComponent}
 
 ]

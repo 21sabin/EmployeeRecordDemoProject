@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
-import {FormGroup,Validators,FormControl} from '@angular/forms';
+import {FormGroup,Validators,FormControl, FormBuilder} from '@angular/forms';
 import {Employees} from './../../dashboard/index/employee.model';
 import {EmployeeService} from './../../dashboard/index/employee.service'
 
@@ -11,10 +11,18 @@ import {EmployeeService} from './../../dashboard/index/employee.service'
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private location:Location,private employeeService:EmployeeService) { }
+  constructor(private location:Location,private employeeService:EmployeeService,
+              private fb: FormBuilder) { 
+                this.myForm = fb.group({
+                  'username': [null, Validators.required],
+                  'email': [null, Validators.required],
+                  'password': [null, Validators.required],
+                  'employeeType': [null, Validators]
+                });
+              }
 
   myForm:FormGroup;
-  employee:Employees;
+  // employee:Employees;
   signupMsg:string="";
   signupStatus:boolean=false;
 
@@ -23,19 +31,19 @@ export class SignupComponent implements OnInit {
     }
 
    onSubmit(){
-     let employees=new Employees(this.myForm.value.email,
+     let employees = new Employees(this.myForm.value.email,
         this.myForm.value.password,
        this.myForm.value.username,
        this.myForm.value.employeeType);
    
 
       this.employeeService.addEmployee(employees)
-      .subscribe(
-        data=>{
-          this.signupMsg="Employee Registrataion sucessfull";
-          this.signupStatus=true;
-        }
-      )
+        .subscribe(
+          data=>{
+            this.signupMsg = "Employee Registrataion sucessfull";
+            this.signupStatus = true;
+          }
+        )
 
       // this.employeeService.addEmployee(employee)
       // .subscribe(
@@ -45,7 +53,7 @@ export class SignupComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.myForm=new FormGroup({
+    this.myForm = new FormGroup({
       
       email:new FormControl(null,[
         Validators.required,
@@ -54,21 +62,20 @@ export class SignupComponent implements OnInit {
       password:new FormControl(null,[
         Validators.required,
         Validators.minLength(5)
-      ]
-        
-      ),
+      ]),
       username:new FormControl(null,[
         Validators.required
       ]),
       employeeType:new FormControl(null,Validators.required)
     })
-  //   this.myForm=new FormGroup({
-  //     email:new FormControl(null,Validators.required),
-  //     password:new FormControl(null,Validators.required),
-  //     username:new FormControl(null,Validators.required),
-  //     employeeType:new FormControl(null,Validators.required),
-  //     image:new FormControl(null,Validators.required)
-  //   })
+    // this.myForm=new FormGroup({
+    //   email:new FormControl(null,Validators.required),
+    //   password:new FormControl(null,Validators.required),
+    //   username:new FormControl(null,Validators.required),
+    //   employeeType:new FormControl(null,Validators.required),
+    //   image:new FormControl(null,Validators.required)
+    // })
+
   }
 
 }

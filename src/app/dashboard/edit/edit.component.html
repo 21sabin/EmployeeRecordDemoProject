@@ -1,15 +1,16 @@
-<div class="container">
+<!-- <div class="container">
 
   <div class="row signup">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1>Employee Registration Form</h1>
+      <h1>Edit Employee</h1>
       <hr>
       <h2 style="color:blue;font-family:cursive">{{signupMsg}}</h2>
-      <form [formGroup]="myForm"  (ngSubmit)="onSubmit()">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
           <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
-              <input type="text" class="form-control" formControlName="username" id="username" placeholder="username">
+              <input type="text" class="form-control" formControlName="username"  id="username" placeholder="username">
+             {{name}}
            </div>
 
            <div *ngIf="myForm.get('username').touched && myForm.get('username').invalid" class="alert alert-danger">
@@ -23,7 +24,7 @@
 
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" placeholder="Email">
+          <input type="email" class="form-control" formControlName="email"  id="exampleInputEmail1" placeholder="Email">
         </div>
 
         <div *ngIf="myForm.get('email').touched && myForm.get('email').invalid" class="alert alert-danger">
@@ -59,13 +60,10 @@
            </select>
           </div>
 
-
-        <!-- <div class="form-group">
+        <div class="form-group">
           <label for="exampleInputFile">Your Image</label>
           <input type="file" id="exampleInputFile" formControlName="image">
-        </div> -->
-
-       
+        </div>
 
         <button type="submit"  class="btn btn-primary">Submit</button><br><br>
         <button type="button" (click)="loginPage()" class="btn btn-sucess btn-sm">Go To Login </button>
@@ -74,4 +72,6 @@
     </div>
   </div>
 
-</div>
+</div> -->
+
+<h1>{{employee && employee.username}}</h1>

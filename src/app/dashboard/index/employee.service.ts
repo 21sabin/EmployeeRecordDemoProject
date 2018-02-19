@@ -1,14 +1,15 @@
-
-import {Injectable,EventEmitter} from '@angular/core';
-import {Http,Response,Headers} from '@angular/http';
-import {Observable} from 'rxjs/Rx';
-import {Employees} from './employee.model'
+import { Injectable,EventEmitter, Output } from '@angular/core';
+import { Http,Response,Headers } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import { Employees } from './employee.model';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class EmployeeService{
     
-    constructor(private http:Http){}
-    isEditEmployee=new EventEmitter<Employees>();
+    constructor(private http:Http, private router:Router){}
+    isEditEmployee = new EventEmitter<Employees>();
     employeeList:Employees[]=[];
 
     addEmployee(emp:Employees){
@@ -37,12 +38,14 @@ export class EmployeeService{
         })
     }
 
-  deleteEmployee(employee:Employees){
-        return this.http.delete("http://localhost:3000/Employees/"+employee.eid)
-  } 
+    deleteEmployee(employee:Employees){
+        return this.http.delete("http://localhost:3000/Employees/" + employee.eid)
+    } 
 
-  editEmployee(employee:Employees){
-    this.isEditEmployee.emit(employee);
-  }
+    editEmployee(employee:Employees){
+        debugger;
+        this.isEditEmployee.emit(employee);
+        this.router.navigateByUrl('/edit');
+    }
 
 }

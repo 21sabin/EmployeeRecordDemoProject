@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-11 col-sm-offset-1">
-            <p>Total number of Employee {{employeeSize()}}</p>
+            <!-- <p>Total number of Employee {{employeeSize()}}</p> -->
             <h2 id="deleteMsg" *ngIf="deleteStatus">{{displayDeleteMsg()}}</h2>
             <table class="table table-striped">
                 <tr>
                     <td>
-                         search: <input type="text" name="employee" (keyup)="search($event)">
+                        search: <input type="text" name="employee" (keyup)="search($event)">
                     </td>
                    
                 </tr>
@@ -28,8 +28,8 @@
                         <td>{{employee.email}}</td>
                         <td>{{employee.employeeType}}</td>
                         <td>
-                            <button type="button" (click)="editEmployee(employee)" class="btn btn-primary btn-sm">Edit</button>
-                            <button type="button" (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm glyphicon glyphicon-trash">Delete</button>
+                            <button type="button" (click)="editEmployee(employee)" class="btn btn-primary btn-sm">Edit</button>                          
+                            <button type="button" (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm">Delete</button>
                          </td>
                      </tr>
                 </div>
@@ -42,12 +42,11 @@
                         <td>{{employee.employeeType}}</td>
                         <td>
                             <button type="button" (click)="editEmployee(employee)" class="btn btn-primary btn-sm">Edit</button>
-                            <button type="button" (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm glyphicon glyphicon-trash">Delete</button>
+                            <button type="button" (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm glyphicon">Delete</button>
                          </td>
                      </tr>
                 </ng-template>
 
-               
               </table>
             
         </div>
